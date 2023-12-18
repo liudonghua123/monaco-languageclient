@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Monaco Language Client Python Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <h2>Monaco Language Client Python Browser Example</h2>
+    <div id="container" style="width:800px;height:600px;border:1px solid grey"></div>
+    <script type="module">
+
+
+        // // Initialize the worker with the JavaScript file
+        // const worker = new Worker('pyright.worker.js');
+        // // Send the `boot` request to the language server
+        // // This starts the language server and a nested worker that performs the language analysis.
+        // worker.postMessage({
+        //     type: 'browser/boot',
+        //     mode: 'foreground'
+        // });
+
+        import { startPythonClient } from "./src/python/browser/main.ts";
+        //import { startPythonClient } from "./src/python/browser/main_statemachine.ts";
+        startPythonClient();
+    </script>
+</body>
+
+</html>
